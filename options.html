@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Options | Search with Variables</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel Biegler">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+
+	<link rel="icon" type="image/png" href="images/favicon.png">
+
+	<style>
+		.container {
+			padding-top: 10vh;
+			padding-bottom: 10vh;
+		}
+			
+		.section-margin {
+			margin-top: 10vh;
+		}
+
+		.highlight-code {
+			color: #ff0000;
+		}
+
+		details[open] summary ~ * {
+			animation: sweep .5s ease-in-out;
+		}
+
+		@keyframes sweep {
+			0%    {opacity: 0; margin-left: -10px}
+			100%  {opacity: 1; margin-left: 0px}
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container" style="max-width: 700px;">
+		
+		<h2>Search Engine</h2>
+		<label for="input-default-search-engine">Query URL</label>
+		<input id="input-default-search-engine" type="text" class="u-full-width" placeholder="Search engine query URL">
+
+		<details>
+			<summary style="cursor: pointer">Show help and examples</summary>
+			<p style="margin-top: 20px;">
+				Sadly Chrome offers no way of accessing the query URLs of configured search engines so you may have to specify your own.<br>
+				You can find your personal settings over at <code>chrome://settings/searchEngines</code>.<br>
+				This extension takes the query URL and replaces the characters <code><b class="highlight-code">%s</b></code> with your processed query.<br>
+				Take a look at these example queries from big search engines:
+			</p>
+			<ul>
+				<li><code>https://www.google.com/search?q=<b class="highlight-code">%s</b></code></li>
+				<li><code>https://www.bing.com/search?q=<b class="highlight-code">%s</b></code></li>
+				<li><code>https://uk.search.yahoo.com/search?p=<b class="highlight-code">%s</b></code></li>
+				<li><code>https://www.ecosia.org/search?q=<b class="highlight-code">%s</b></code></li>
+				<li><code>https://duckduckgo.com/?q=<b class="highlight-code">%s</b></code></li>
+			</ul>
+		</details>
+		
+
+		<h2 class="section-margin">Variables</h2>
+		<div class="row">
+			<div class="three columns">
+				<label for="input-variable-0">Variable Name</label>
+			</div>
+			<div class="six columns">
+				<label for="input-replace-0">Replace Value</label>
+			</div>
+			<div class="three columns">
+				<label for="button-delete-0">Action</label>
+			</div>
+		</div>
+		<div id="section-variables">
+			<p id="p-variables-status">Loading your variables..</p>
+		</div>
+		<div class="row">
+			<div class="three columns">
+				<button id="button-add-variable" class="button-primary u-full-width">Add variable</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="options.js"></script>
+
+</body>
+
+</html>
