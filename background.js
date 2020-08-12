@@ -42,7 +42,7 @@ function onStorageSet(result) {
       type: 'basic',
       title: 'Settings saved',
       message: 'Your settings have been successfully saved. Click to dismiss this notification.',
-      iconUrl: 'newtab_search128.png',
+      iconUrl: 'icon128.png',
     },
 
     // Empty callback for backwards compatability with Chrome 42.
@@ -75,7 +75,7 @@ chrome.runtime.onInstalled.addListener((details) => {
       [STORAGE_DEFAULT_SEARCH_URL]: "https://www.google.com/search?q=%s"
     };
 
-    chrome.storage.sync.set(DEFAULT_CONFIG, onStorageSet);
+    chrome.storage.sync.set(DEFAULT_CONFIG);
     
   }
 

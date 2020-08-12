@@ -15,8 +15,8 @@
   
   "browser_action": {
     "default_icon": {
-      "16": "newtab_search16.png",
-      "32": "newtab_search32.png"
+      "16":  "icon16.png",
+      "32":  "icon32.png"
     },
     "default_popup": "popup.html"
   },
@@ -35,9 +35,9 @@
   },
 
   "icons": {
-    "16": "newtab_search16.png",
-    "32": "newtab_search32.png",
-    "48": "newtab_search48.png",
-    "128": "newtab_search128.png"
+    "16":  "icon16.png",
+    "32":  "icon32.png",
+    "48":  "icon48.png",
+    "128": "icon128.png"
   }
 }
