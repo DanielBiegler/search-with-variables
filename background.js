@@ -68,8 +68,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         { id: 3, searchValue: ":so",   replaceValue: "stackoverflow"        },
         { id: 4, searchValue: ":cea",  replaceValue: "chrome extension api" },
         { id: 5, searchValue: ":lx",   replaceValue: "linux"                },
-        { id: 6, searchValue: ":alx",  replaceValue: "arch linux"           },
-        { id: 7, searchValue: "@db",   replaceValue: "danielbiegler.de"     },
+        { id: 6, searchValue: "@db",   replaceValue: "danielbiegler.de"     },
       ],
 
       [STORAGE_DEFAULT_SEARCH_URL]: "https://www.google.com/search?q=%s"
