@@ -9,22 +9,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <style>
+    @font-face {
+      font-family: Raleway;
+      src: url(fonts/Raleway-VariableFont_wght.ttf);
+    }
+  </style>
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
 
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="icon128.png">
 
 </head>
-<body>
+<body style="padding: 20px; min-width: 300px;">
 
-  <div class="container">
-    <div class="row">
-      <div class="six column">
-        <h4>Basic Page</h4>
-        <p>asdasd asd asd.</p>
-      </div>
-    </div>
-  </div>
+  <label for="input-search">Press enter to search</label>
+  <input id="input-search" class="u-full-width" autofocus type="text" placeholder="Search with variables">
+  <small><a href="options.html" target="_blank" id="a-goto-options">
+    See your variables &rarr;
+  </a></small>
+
+  <script src="popup.js"></script>
 
 </body>
 </html>
