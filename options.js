@@ -6,7 +6,41 @@ const sectionVariablesContainer = document.getElementById('section-variables');
 const textVariableStatus = document.getElementById('p-variables-status');
 
 
+// Helpers
+function generateDefaultSuggestions() {
+
+	chrome.storage.sync.get([STORAGE_RULES], function(result) {
+  
+	  let suggestion = "Your values: ";
+  
+	  const FIRST_RULE = result[STORAGE_RULES][0];
+  
+	  if(FIRST_RULE) {
+  
+		suggestion += `${FIRST_RULE.searchValue} => ${FIRST_RULE.replaceValue}`;
+		
+	  } else {
+  
+		suggestion = "You have no values set. Go to the settings page to add new ones.";
+		
+	  }
+  
+	  for(let i = 1; i < result[STORAGE_RULES].length; i++) {
+  
+		suggestion += `, ${result[STORAGE_RULES][i].searchValue} => ${result[STORAGE_RULES][i].replaceValue}`;
+  
+	  }
+  
+	  chrome.omnibox.setDefaultSuggestion({ description: suggestion })
+  
+	});
+	
+}
+
+
 function onStorageSet() {
+
+	generateDefaultSuggestions();
 
 	chrome.notifications.create('storageSet',
 		{
@@ -24,7 +58,7 @@ function onStorageSet() {
 
 				chrome.notifications.clear(notificationId);
 				
-			}, 1333);
+			}, 1700);
 			
 		}
 	);
