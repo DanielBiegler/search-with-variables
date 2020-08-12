@@ -75,6 +75,8 @@ chrome.runtime.onInstalled.addListener((details) => {
     };
 
     chrome.storage.sync.set(DEFAULT_CONFIG);
+
+    generateDefaultSuggestions();
     
   }
 
