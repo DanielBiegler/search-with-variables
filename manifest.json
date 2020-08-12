@@ -1,6 +1,6 @@
 {
   "name": "Search with Variables",
-  "description": "Either type ':' (colon) into the omnibox or press CTRL+SHIFT+L to search the web with variables inside the query for those pesky repeating lookups.",
+  "description": "Quickly search the web with variables inside the query for those pesky repeating lookups.",
   "version": "0.0.1",
   "manifest_version": 2,
 
