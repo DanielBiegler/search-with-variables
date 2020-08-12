@@ -110,10 +110,13 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 
 /**
+ * Also see the same function in popup.js
+ * Code duplication mehh. Probably better to pass messages to background
+ * and then respond with an formatted string?
  * 
  * @param {String} query The query with variables inside it.
  */
-function handleInput(query) {
+function handleSearch(query) {
 
   /* 
   * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
@@ -134,7 +137,6 @@ function handleInput(query) {
     }
 
     // Open in a new tab
-    // TODO: Add different search engines
     let newURL = result[STORAGE_DEFAULT_SEARCH_URL].replace("%s", encodeURIComponent(query));
     chrome.tabs.create({ url: newURL });
     
@@ -144,4 +146,4 @@ function handleInput(query) {
 
 
 // This event is fired when the user accepts the input in the omnibox.
-chrome.omnibox.onInputEntered.addListener( handleInput );
+chrome.omnibox.onInputEntered.addListener( handleSearch );
