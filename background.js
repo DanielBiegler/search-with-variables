@@ -80,9 +80,10 @@ chrome.runtime.onInstalled.addListener((details) => {
   }
 
   function onUpdate(currentVersion, previousVersion) {
-    // FOR DEBUGGING ONLY!!!
-    // DELETE IN PROD
-    onInstall();
+    
+    // Currently there's nothing to do here.
+    // Future versions might need to use this to update the internals
+    
   }
   
   const currentVersion = chrome.runtime.getManifest().version;
