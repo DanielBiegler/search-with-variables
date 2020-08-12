@@ -18,7 +18,15 @@ function onStorageSet() {
 	
 		// Empty callback for backwards compatability with Chrome 42.
 		// See: https://developer.chrome.com/apps/notifications#method-create
-		function(notificationId) {}
+		function(notificationId) {
+
+			setTimeout(() => {
+
+				chrome.notifications.clear(notificationId);
+				
+			}, 1333);
+			
+		}
 	);
 
 }
@@ -205,6 +213,9 @@ initSettings();
 
 // Init the Add-Variable button
 document.getElementById('button-add-variable').addEventListener('click', e => {
+
+	// Just in case
+	textVariableStatus.style.display = "none";
 
 	const ruleId = Date.now();
 	const {ruleRow, inputVariable, inputReplace, buttonDelete} = createRuleRow(ruleId, "", "");
