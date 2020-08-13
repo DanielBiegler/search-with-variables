@@ -9,7 +9,7 @@ function generateDefaultSuggestions() {
 
   chrome.storage.sync.get([STORAGE_RULES], function(result) {
 
-    let suggestion = "Your values: ";
+    let suggestion = `${chrome.i18n.getMessage("yourValues")}: `;
 
     const FIRST_RULE = result[STORAGE_RULES][0];
 
@@ -19,7 +19,7 @@ function generateDefaultSuggestions() {
       
     } else {
 
-      suggestion = "You have no values set. Go to the settings page to add new ones.";
+      suggestion = chrome.i18n.getMessage("noValuesSet");
       
     }
 
@@ -40,8 +40,8 @@ function onStorageSet(result) {
   chrome.notifications.create('storageSet',
     {
       type: 'basic',
-      title: 'Settings saved',
-      message: 'Your settings have been successfully saved. Click to dismiss this notification.',
+      title:   chrome.i18n.getMessage("notificationTitle"),
+      message: chrome.i18n.getMessage("notificationMessage"),
       iconUrl: 'icon128.png',
     },
 

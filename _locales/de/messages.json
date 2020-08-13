@@ -1,0 +1,31 @@
+{
+	"extName": { "message": "Suche mit Variablen" },
+	"extDescription": { "message": "Effizientes Suchen im Web mit Hilfe von Variablen innerhalb der Suchanfrage. Sag 'Adieu' zu lästigen, sich wiederholenden Suchen!" },
+
+	"yourValues": { "message": "Deine Werte:" },
+	"noValuesSet": { "message": "Du hast noch keine Variablen angelegt. Öffne die Einstellungen um welche anzulegen." },
+
+	"notificationTitle": { "message": "Einstellungen gespeichert" },
+	"notificationMessage": { "message": "Deine Einstellungen wurden erfolgreich gespeichert. Klicke auf die Benachrichtigung um sie zu schliessen." },
+
+	"optionsPageTitle": { "message": "Optionen | Suche mit Variablen" },
+	"popupPageTitle": { "message": "Popup | Suche mit Variablen" },
+
+	"searchEngine": { "message": "Suchmaschine" },
+	"queryURL": { "message": "Anfrage URL" },
+
+	"showQueryHelpTitle": { "message": "Öffne Hilfe und Beispiele" },
+	"queryHelpDescription": { "message": "Leider bietet Chrome keine Möglichkeit, auf die Abfrage-URLs von konfigurierten Suchmaschinen zuzugreifen, so dass du eventuell deine eigene angeben musst.<br>Deine persönlichen Einstellungen findest du unter <code>chrome://settings/searchEngines</code>.<br>Diese Erweiterung nimmt die Abfrage-URL und ersetzt die Zeichen <code><b class=\"highlight-code\">%s</b></code> durch deine bearbeitete Anfrage.<br>Schau dir diese Beispielanfragen von großen Suchmaschinen an:" },
+
+	"variables": { "message": "Variablen" },
+	"variableName": { "message": "Variablenname" },
+	"replaceValue": { "message": "Ersetzwert" },
+	"action": { "message": "Aktion" },
+	"loadingVariables": { "message": "Deine Variablen laden gerade.." },
+	"noVariables": { "message": "Es sind noch keine Variablen angelegt." },
+	"addVariable": { "message": "Hinzufügen" },
+	"delete": { "message": "Löschen" },
+
+	"pressEnterToSearch": { "message": "Drücke Enter um zu suchen" },
+	"seeYourVariables": { "message": "Öffne deine Variablen" }
+}

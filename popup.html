@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Popup | Search with Variables</title>
+  <title data-i18n="popupPageTitle">Popup | Search with Variables</title>
   <meta name="description" content="">
   <meta name="author" content="Daniel Biegler">
 
@@ -24,12 +24,13 @@
 </head>
 <body style="padding: 20px; min-width: 300px;">
 
-  <label for="input-search">Press enter to search</label>
-  <input id="input-search" class="u-full-width" autofocus type="text" placeholder="Search with variables">
+  <label data-i18n="pressEnterToSearch" for="input-search">Press enter to search</label>
+  <input data-i18n="extName" id="input-search" class="u-full-width" autofocus type="text" placeholder="Search with Variables">
   <small><a href="options.html" target="_blank" id="a-goto-options">
-    See your variables &rarr;
+    <span data-i18n="seeYourVariables">See your variables</span>&nbsp;&rarr;
   </a></small>
 
+  <script src="apply_i18n.js"></script>
   <script src="popup.js"></script>
 
 </body>

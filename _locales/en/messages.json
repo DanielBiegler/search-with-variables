@@ -1,0 +1,31 @@
+{
+	"extName": { "message": "Search with Variables" },
+	"extDescription": { "message": "Quickly search the web with variables inside the query for those pesky repeating lookups." },
+
+	"yourValues": { "message": "Your values" },
+	"noValuesSet": { "message": "You have no values set. Go to the settings page to add new ones." },
+
+	"notificationTitle": { "message": "Settings saved" },
+	"notificationMessage": { "message": "Your settings have been successfully saved. Click to dismiss this notification." },
+
+	"optionsPageTitle": { "message": "Options | Search with Variables" },
+	"popupPageTitle": { "message": "Popup | Search with Variables" },
+
+	"searchEngine": { "message": "Search Engine" },
+	"queryURL": { "message": "Query URL" },
+
+	"showQueryHelpTitle": { "message": "Show help and examples" },
+	"queryHelpDescription": { "message": "Sadly Chrome offers no way of accessing the query URLs of configured search engines so you may have to specify your own.<br>You can find your personal settings over at <code>chrome://settings/searchEngines</code>.<br>This extension takes the query URL and replaces the characters <code><b class=\"highlight-code\">%s</b></code> with your processed query.<br>Take a look at these example queries from big search engines:" },
+
+	"variables": { "message": "Variables" },
+	"variableName": { "message": "Variable Name" },
+	"replaceValue": { "message": "Replace Value" },
+	"action": { "message": "Action" },
+	"loadingVariables": { "message": "Loading your variables.." },
+	"noVariables": { "message": "There are currently no variables set." },
+	"addVariable": { "message": "Add variable" },
+	"delete": { "message": "Delete" },
+
+	"pressEnterToSearch": { "message": "Press enter to search" },
+	"seeYourVariables": { "message": "See your variables" }
+}

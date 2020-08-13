@@ -11,7 +11,7 @@ function generateDefaultSuggestions() {
 
 	chrome.storage.sync.get([STORAGE_RULES], function(result) {
   
-	  let suggestion = "Your values: ";
+	  let suggestion = `${chrome.i18n.getMessage("yourValues")}: `;
   
 	  const FIRST_RULE = result[STORAGE_RULES][0];
   
@@ -21,7 +21,7 @@ function generateDefaultSuggestions() {
 		
 	  } else {
   
-		suggestion = "You have no values set. Go to the settings page to add new ones.";
+		suggestion = suggestion = chrome.i18n.getMessage("noValuesSet");
 		
 	  }
   
@@ -45,8 +45,8 @@ function onStorageSet() {
 	chrome.notifications.create('storageSet',
 		{
 			type: 'basic',
-			title: 'Settings saved',
-			message: 'Your settings have been successfully saved. Click to dismiss this notification.',
+			title:   chrome.i18n.getMessage("notificationTitle"),
+			message: chrome.i18n.getMessage("notificationMessage"),
 			iconUrl: 'icon128.png',
 		},
 	
@@ -85,7 +85,7 @@ function onDeleteAction(ruleRow, ruleId) {
 			// Provide some feedback just in case
 			if(result[STORAGE_RULES].length === 0) {
 
-				textVariableStatus.innerText = "There are currently no variables set.";
+				textVariableStatus.innerText = chrome.i18n.getMessage("noVariables");
 				textVariableStatus.style.display = "block";
 				
 			}
@@ -101,13 +101,13 @@ function createRuleRow(ruleId, searchValue, replaceValue) {
 
 	// Add row for this entry
 	const template = `<div class="three columns">
-		<input class="u-full-width" type="text" id="input-variable-${ruleId}" placeholder="Variable name" value="${searchValue}">
+		<input class="u-full-width" type="text" id="input-variable-${ruleId}" placeholder="${chrome.i18n.getMessage("variableName")}" value="${searchValue}">
 	</div>
 	<div class="six columns">
-		<input class="u-full-width" type="text" id="input-replace-${ruleId}" placeholder="Replace value" value="${replaceValue}">
+		<input class="u-full-width" type="text" id="input-replace-${ruleId}" placeholder="${chrome.i18n.getMessage("replaceValue")}" value="${replaceValue}">
 	</div>
 	<div class="three columns">
-		<button id="button-delete-${ruleId}" class="u-full-width">Delete</button>
+		<button id="button-delete-${ruleId}" class="u-full-width">${chrome.i18n.getMessage("delete")}</button>
 	</div>`;
 
 	const htmlEntry = document.createElement('div');
@@ -210,7 +210,7 @@ function initSettings() {
 
 		if(result[STORAGE_RULES].length === 0) {
 			
-			textVariableStatus.innerText = "There are currently no variables set.";
+			textVariableStatus.innerText = chrome.i18n.getMessage("noVariables");
 			
 		} else {
 
