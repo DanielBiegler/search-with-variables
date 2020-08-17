@@ -8,7 +8,7 @@
   "permissions": ["storage", "notifications"],
   
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["browser-polyfill.min.js", "background.js"],
     "persistent": false
   },
 
@@ -40,5 +40,15 @@
     "32":  "icon32.png",
     "48":  "icon48.png",
     "128": "icon128.png"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "e3d41e2f-6bb0-4f04-a601-4923c542bd9e",
+      "strict_min_version": "42.0"
+    },
+    "edge": {
+      "browser_action_next_to_addressbar": true
+    }
   }
 }
