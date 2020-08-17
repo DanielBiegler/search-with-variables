@@ -8,7 +8,7 @@
   "permissions": ["storage", "notifications"],
   
   "background": {
-    "scripts": ["browser-polyfill.min.js", "background.js"],
+    "scripts": ["browser-polyfill.min.js", "shared.js", "background.js"],
     "persistent": false
   },
 

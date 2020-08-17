@@ -1,9 +1,3 @@
-// Const Variables
-// Careful when changing this, because other files might depend on this too.
-const STORAGE_RULES = 'rules';
-const STORAGE_DEFAULT_SEARCH_URL = 'defaultSearchURL';
-
-
 // Helpers
 function generateDefaultSuggestions() {
 

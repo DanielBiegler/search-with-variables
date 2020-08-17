@@ -1,6 +1,3 @@
-// Careful when changing this, because other logic might depend on this too.
-const STORAGE_DEFAULT_SEARCH_URL = 'defaultSearchURL';
-const STORAGE_RULES = 'rules';
 const inputDefaultSearchEngine = document.getElementById('input-default-search-engine');
 const sectionVariablesContainer = document.getElementById('section-variables');
 const textVariableStatus = document.getElementById('p-variables-status');
