@@ -1,54 +1,3 @@
-// Helpers
-function generateDefaultSuggestions() {
-
-  chrome.storage.sync.get([STORAGE_RULES], function(result) {
-
-    let suggestion = `${chrome.i18n.getMessage("yourValues")}: `;
-
-    const FIRST_RULE = result[STORAGE_RULES][0];
-
-    if(FIRST_RULE) {
-
-      suggestion += `${FIRST_RULE.searchValue} => ${FIRST_RULE.replaceValue}`;
-      
-    } else {
-
-      suggestion = chrome.i18n.getMessage("noValuesSet");
-      
-    }
-
-    for(let i = 1; i < result[STORAGE_RULES].length; i++) {
-
-      suggestion += `, ${result[STORAGE_RULES][i].searchValue} => ${result[STORAGE_RULES][i].replaceValue}`;
-
-    }
-
-    chrome.omnibox.setDefaultSuggestion({ description: suggestion })
-
-  });
-  
-}
-
-function onStorageSet(result) {
-
-  chrome.notifications.create('storageSet',
-    {
-      type: 'basic',
-      title:   chrome.i18n.getMessage("notificationTitle"),
-      message: chrome.i18n.getMessage("notificationMessage"),
-      iconUrl: 'icon128.png',
-    },
-
-    // Empty callback for backwards compatability with Chrome 42.
-    // See: https://developer.chrome.com/apps/notifications#method-create
-    function(notificationId) {}
-  );
-
-  generateDefaultSuggestions();
-    
-}
-
-
 // This event is fired when the user installs/updates the extension
 chrome.runtime.onInstalled.addListener((details) => {
 
@@ -103,42 +52,6 @@ chrome.runtime.onInstalled.addListener((details) => {
   }
 
 })
-
-
-/**
- * Also see the same function in popup.js
- * Code duplication mehh. Probably better to pass messages to background
- * and then respond with an formatted string?
- * 
- * @param {String} query The query with variables inside it.
- */
-function handleSearch(query) {
-
-  /* 
-  * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
-  */
-  function escapeRegExp(string) {
-    return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
-  }
-
-  
-  chrome.storage.sync.get([STORAGE_RULES, STORAGE_DEFAULT_SEARCH_URL], function(result) {
-    
-    // Replace expressions in the query
-    for(const RULE of result[STORAGE_RULES]) {
-
-      const REGEX_SEARCH_VALUE = new RegExp(escapeRegExp(RULE.searchValue), 'g');
-      query = query.replace(REGEX_SEARCH_VALUE, RULE.replaceValue);
-
-    }
-
-    // Open in a new tab
-    let newURL = result[STORAGE_DEFAULT_SEARCH_URL].replace("%s", encodeURIComponent(query));
-    chrome.tabs.create({ url: newURL });
-    
-  });
-
-}
 
 
 // This event is fired when the user accepts the input in the omnibox.

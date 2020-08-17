@@ -1,27 +1,28 @@
-/**
- * This file is for global (shared) variables and functions.
- * Be wary of permissions though because some API calls only work in specific layers.
- */
+// 
+// This file is for global (shared) variables and functions.
+// Be wary of permissions though because some API calls only work in specific layers.
+// 
 
 
-/**
- * ******************
- * *** Variables ****
- * ******************
- */
+// 
+// ******************
+// *** Variables ****
+// ******************
+// 
 
 const STORAGE_DEFAULT_SEARCH_URL = 'defaultSearchURL';
 const STORAGE_RULES = 'rules';
 
 
 
-/**
- * ******************
- * *** Functions ****
- * ******************
- */
+// 
+// ******************
+// *** Functions ****
+// ******************
+// 
 
 /**
+ * Replaces variables inside the query and searches in a new tab.
  * @param {String} query The query with variables inside it.
  */
 function handleSearch(query) {
@@ -50,4 +51,77 @@ function handleSearch(query) {
 	  
 	});
   
+}
+
+/**
+ * Generates and sets the default suggestion for the omnibox based on the
+ * currently set search/replace values.
+ */
+function generateDefaultSuggestions() {
+
+	chrome.storage.sync.get([STORAGE_RULES], function(result) {
+
+		let suggestion = `${chrome.i18n.getMessage("yourValues")}: `;
+
+		const FIRST_RULE = result[STORAGE_RULES][0];
+
+		if(FIRST_RULE) {
+
+		suggestion += `${FIRST_RULE.searchValue} => ${FIRST_RULE.replaceValue}`;
+		
+		} else {
+
+		suggestion = chrome.i18n.getMessage("noValuesSet");
+		
+		}
+
+		for(let i = 1; i < result[STORAGE_RULES].length; i++) {
+
+		suggestion += `, ${result[STORAGE_RULES][i].searchValue} => ${result[STORAGE_RULES][i].replaceValue}`;
+
+		}
+
+		chrome.omnibox.setDefaultSuggestion({ description: suggestion })
+
+	});
+
+}
+
+
+
+// TODO: Replace with SUCCESS/ERROR variants.
+/**
+ * Handler for successfully saving a value to storage.
+ * @param {boolean} isAutoClearingNotification Defaults to `true`. Whether or not to clear the notification automatically.
+ * @param {number} notificationDuration Defaults to `1750ms`. Duration to display the notification for in milliseconds.
+ */
+function onStorageSet(isAutoClearingNotification = true, notificationDuration = 1750) {
+
+	generateDefaultSuggestions();
+
+	// TODO: Replace the i18n keys with SUCCESS/ERROR versions
+	// Keep in mind to check whether they were used in HTML
+	chrome.notifications.create('storageSet',
+		{
+			type: 'basic',
+			title:   chrome.i18n.getMessage("notificationTitle"),
+			message: chrome.i18n.getMessage("notificationMessage"),
+			iconUrl: 'icon128.png',
+		},
+
+		function(notificationId) {
+
+			if(isAutoClearingNotification) {
+
+				setTimeout(() => {
+	
+					chrome.notifications.clear(notificationId);
+					
+				}, notificationDuration);
+				
+			}
+			
+		}
+	);
+
 }

@@ -3,65 +3,6 @@ const sectionVariablesContainer = document.getElementById('section-variables');
 const textVariableStatus = document.getElementById('p-variables-status');
 
 
-// Helpers
-function generateDefaultSuggestions() {
-
-	chrome.storage.sync.get([STORAGE_RULES], function(result) {
-  
-	  let suggestion = `${chrome.i18n.getMessage("yourValues")}: `;
-  
-	  const FIRST_RULE = result[STORAGE_RULES][0];
-  
-	  if(FIRST_RULE) {
-  
-		suggestion += `${FIRST_RULE.searchValue} => ${FIRST_RULE.replaceValue}`;
-		
-	  } else {
-  
-		suggestion = suggestion = chrome.i18n.getMessage("noValuesSet");
-		
-	  }
-  
-	  for(let i = 1; i < result[STORAGE_RULES].length; i++) {
-  
-		suggestion += `, ${result[STORAGE_RULES][i].searchValue} => ${result[STORAGE_RULES][i].replaceValue}`;
-  
-	  }
-  
-	  chrome.omnibox.setDefaultSuggestion({ description: suggestion })
-  
-	});
-	
-}
-
-
-function onStorageSet() {
-
-	generateDefaultSuggestions();
-
-	chrome.notifications.create('storageSet',
-		{
-			type: 'basic',
-			title:   chrome.i18n.getMessage("notificationTitle"),
-			message: chrome.i18n.getMessage("notificationMessage"),
-			iconUrl: 'icon128.png',
-		},
-	
-		// Empty callback for backwards compatability with Chrome 42.
-		// See: https://developer.chrome.com/apps/notifications#method-create
-		function(notificationId) {
-
-			setTimeout(() => {
-
-				chrome.notifications.clear(notificationId);
-				
-			}, 1700);
-			
-		}
-	);
-
-}
-
 
 function onDeleteAction(ruleRow, ruleId) {
 
