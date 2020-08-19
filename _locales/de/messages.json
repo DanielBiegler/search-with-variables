@@ -15,7 +15,7 @@
 	"queryURL": { "message": "Anfrage URL" },
 
 	"showQueryHelpTitle": { "message": "Öffne/Schließe Hilfe und Beispiele" },
-	"queryHelpDescription": { "message": "Leider bieten Browser keine Möglichkeit, auf die Abfrage-URLs von konfigurierten Suchmaschinen zuzugreifen, so dass du eventuell deine eigene angeben musst.<br>Deine persönlichen Einstellungen findest du unter <code>chrome://settings/searchEngines</code>.<br>Diese Erweiterung nimmt die Abfrage-URL und ersetzt die Zeichen <code><b class=\"highlight-code\">%s</b></code> durch deine bearbeitete Anfrage.<br>Schau dir diese Beispielanfragen von großen Suchmaschinen an:" },
+	"queryHelpDescription": { "message": "Leider bieten Browser keine Möglichkeit, auf die Abfrage-URLs von konfigurierten Suchmaschinen zuzugreifen, so dass du eventuell deine eigene angeben musst.<br>Deine persönlichen Einstellungen findest du unter <code>chrome://settings/searchEngines</code>.<br>(Firefox: <code>about:addons</code>)<br>Diese Erweiterung nimmt die Abfrage-URL und ersetzt die Zeichen <code><b class=\"highlight-code\">%s</b></code> durch deine bearbeitete Anfrage.<br>Schau dir diese Beispielanfragen von großen Suchmaschinen an:" },
 
 	"variables": { "message": "Variablen" },
 	"variableName": { "message": "Variablenname" },
