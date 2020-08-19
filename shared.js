@@ -24,6 +24,7 @@ const STORAGE_RULES = 'rules';
 /**
  * Replaces variables inside the query and searches in a new tab.
  * @param {String} query The query with variables inside it.
+ * @returns A `Promise` so that you can chain it.
  */
 function handleSearch(query) {
 
@@ -35,23 +36,22 @@ function handleSearch(query) {
 	}
   
 	
-	browser.storage.sync.get([STORAGE_RULES, STORAGE_DEFAULT_SEARCH_URL]).then(
-		(result) => {
-	  
-			// Replace expressions in the query
-			for(const RULE of result[STORAGE_RULES]) {
-		
-				const REGEX_SEARCH_VALUE = new RegExp(escapeRegExp(RULE.searchValue), 'g');
-				query = query.replace(REGEX_SEARCH_VALUE, RULE.replaceValue);
-		
-			}
-		
-			// Open in a new tab
-			let newURL = result[STORAGE_DEFAULT_SEARCH_URL].replace("%s", encodeURIComponent(query));
-			browser.tabs.create({ url: newURL });
-		
+	// We return the promise so that we can react to it async-ly
+	return browser.storage.sync.get([STORAGE_RULES, STORAGE_DEFAULT_SEARCH_URL]).then( result => {
+
+		// Replace expressions in the query
+		for(const RULE of result[STORAGE_RULES]) {
+	
+			const REGEX_SEARCH_VALUE = new RegExp(escapeRegExp(RULE.searchValue), 'g');
+			query = query.replace(REGEX_SEARCH_VALUE, RULE.replaceValue);
+	
 		}
-	);
+	
+		// Open in a new tab
+		let newURL = result[STORAGE_DEFAULT_SEARCH_URL].replace("%s", encodeURIComponent(query));
+		browser.tabs.create({ url: newURL });
+	
+	});
   
 }
 

@@ -6,7 +6,11 @@ const inputSearch = document.getElementById('input-search');
 inputSearch.addEventListener('keypress', e => {
 
 	if(e.key === "Enter") {
-		handleSearch(inputSearch.value);
+		handleSearch(inputSearch.value)
+		.then(() => {
+			// Firefox does NOT automatically close the popup (like chrome)
+			window.close();
+		});
 	}
 
 });

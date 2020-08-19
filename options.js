@@ -110,7 +110,6 @@ function addInputListeners(inputVariable, inputReplace, ruleId) {
 function initSettings() {
 
 	// Retrieve everything
-	// TODO: This might error out?
 	browser.storage.sync.get()
 	.then(result => {
 
