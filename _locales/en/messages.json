@@ -15,7 +15,7 @@
 	"queryURL": { "message": "Query URL" },
 
 	"showQueryHelpTitle": { "message": "Show/Hide help and examples" },
-	"queryHelpDescription": { "message": "Sadly Chrome offers no way of accessing the query URLs of configured search engines so you may have to specify your own.<br>You can find your personal settings over at <code>chrome://settings/searchEngines</code>.<br>This extension takes the query URL and replaces the characters <code><b class=\"highlight-code\">%s</b></code> with your processed query.<br>Take a look at these example queries from big search engines:" },
+	"queryHelpDescription": { "message": "Sadly browsers offer no way of accessing the query URLs of configured search engines so you may have to specify your own.<br>You can find your personal settings over at <code>chrome://settings/searchEngines</code>.<br>This extension takes the query URL and replaces the characters <code><b class=\"highlight-code\">%s</b></code> with your processed query.<br>Take a look at these example queries from big search engines:" },
 
 	"variables": { "message": "Variables" },
 	"variableName": { "message": "Variable Name" },
