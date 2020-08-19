@@ -6,14 +6,16 @@ const textVariableStatus = document.getElementById('p-variables-status');
 
 function onDeleteAction(ruleRow, ruleId) {
 
-	chrome.storage.sync.get([STORAGE_RULES], function(result) {
+	browser.storage.sync.get([STORAGE_RULES])
+	.then(result => {
 
 		// Remove entry
 		// We need to 'find' it because the indices will change after removing elements.
 		const rmIndex = result[STORAGE_RULES].findIndex(rule => rule.id === ruleId);
 		result[STORAGE_RULES].splice(rmIndex, 1);
 
-		chrome.storage.sync.set({ [STORAGE_RULES]: result[STORAGE_RULES] }, function() {
+		browser.storage.sync.set({ [STORAGE_RULES]: result[STORAGE_RULES] })
+		.then(() => {
 
 			onStorageSet();
 
@@ -23,7 +25,7 @@ function onDeleteAction(ruleRow, ruleId) {
 			// Provide some feedback just in case
 			if(result[STORAGE_RULES].length === 0) {
 
-				textVariableStatus.innerText = chrome.i18n.getMessage("noVariables");
+				textVariableStatus.innerText = browser.i18n.getMessage("noVariables");
 				textVariableStatus.style.display = "block";
 				
 			}
@@ -39,13 +41,13 @@ function createRuleRow(ruleId, searchValue, replaceValue) {
 
 	// Add row for this entry
 	const template = `<div class="three columns">
-		<input class="u-full-width" type="text" id="input-variable-${ruleId}" placeholder="${chrome.i18n.getMessage("variableName")}" value="${searchValue}">
+		<input class="u-full-width" type="text" id="input-variable-${ruleId}" placeholder="${browser.i18n.getMessage("variableName")}" value="${searchValue}">
 	</div>
 	<div class="six columns">
-		<input class="u-full-width" type="text" id="input-replace-${ruleId}" placeholder="${chrome.i18n.getMessage("replaceValue")}" value="${replaceValue}">
+		<input class="u-full-width" type="text" id="input-replace-${ruleId}" placeholder="${browser.i18n.getMessage("replaceValue")}" value="${replaceValue}">
 	</div>
 	<div class="three columns">
-		<button id="button-delete-${ruleId}" class="u-full-width">${chrome.i18n.getMessage("delete")}</button>
+		<button id="button-delete-${ruleId}" class="u-full-width">${browser.i18n.getMessage("delete")}</button>
 	</div>`;
 
 	const htmlEntry = document.createElement('div');
@@ -66,89 +68,64 @@ function createRuleRow(ruleId, searchValue, replaceValue) {
 
 function addInputListeners(inputVariable, inputReplace, ruleId) {
 
-	inputVariable.addEventListener("change", event => {
+	function createOrUpdateEntry(result) {
 
-		chrome.storage.sync.get([STORAGE_RULES], result => {
+		// 1. create or update searchValue
+		const ruleIndex = result[STORAGE_RULES].findIndex(rule => rule.id === ruleId);
+		// -1 means findIndex couldnt find the index
+		if(ruleIndex === -1) {
 
-			// 1. create or update searchValue
-			const ruleIndex = result[STORAGE_RULES].findIndex(rule => rule.id === ruleId);
-			if(ruleIndex === -1) {
+			result[STORAGE_RULES].push({
+				id: ruleId,
+				searchValue: inputVariable.value,
+				replaceValue: inputReplace.value,
+			});
+			
+		} else {
 
-				result[STORAGE_RULES].push({
-					id: ruleId,
-					searchValue: inputVariable.value,
-					replaceValue: "",
-				});
-				
-			} else {
+			result[STORAGE_RULES][ruleIndex].searchValue = inputVariable.value;
+			result[STORAGE_RULES][ruleIndex].replaceValue = inputReplace.value;
+			
+		}
 
-				result[STORAGE_RULES][ruleIndex].searchValue = inputVariable.value;
-				
-			}
+		// 2. Sync
+		browser.storage.sync.set({ [STORAGE_RULES]: result[STORAGE_RULES] })
+		.then(onStorageSet);
 
-			// 2. Sync
-			chrome.storage.sync.set({ [STORAGE_RULES]: result[STORAGE_RULES] }, onStorageSet);
-
-		});
-
-
-	});
-
-	// Bad code duplication I know, but mehh..
-	// Might work to simply set both inputs, instead of separate
-	// that way we can create a function that can be run for both
-	// // (NOTE: then theres no need to differentiate here:
-	// // // searchValue: "",
-	// // // replaceValue: inputReplace.value,)
-	// but this issue so localized and """probably""" doesnt need much future change?
-	// that way would TECHNICALLY be less efficient but it probably doesnt make a difference.
-	inputReplace.addEventListener("change", event => {
-
-		chrome.storage.sync.get([STORAGE_RULES], result => {
-
-			// 1. create or update searchValue
-			const ruleIndex = result[STORAGE_RULES].findIndex(rule => rule.id === ruleId);
-			if(ruleIndex === -1) {
-
-				result[STORAGE_RULES].push({
-					id: ruleId,
-					searchValue: "",
-					replaceValue: inputReplace.value,
-				});
-				
-			} else {
-
-				result[STORAGE_RULES][ruleIndex].replaceValue = inputReplace.value;
-				
-			}
-
-			// 2. Sync
-			chrome.storage.sync.set({ [STORAGE_RULES]: result[STORAGE_RULES] }, onStorageSet);
-
-		});
+	}
 
 
-	});
+	function handleChange(event) {
+		browser.storage.sync.get([STORAGE_RULES])
+		.then(createOrUpdateEntry);
+	}
+
+	
+	inputVariable.addEventListener("change", handleChange);
+	inputReplace.addEventListener("change", handleChange);
 	
 }
 
 
 function initSettings() {
 
-	chrome.storage.sync.get(function(result) {
+	// Retrieve everything
+	// TODO: This might error out?
+	browser.storage.sync.get(result => {
 
 		// Search engine query URL
 		inputDefaultSearchEngine.value = result[STORAGE_DEFAULT_SEARCH_URL];
 		inputDefaultSearchEngine.addEventListener("change", event => {
 
-			chrome.storage.sync.set({ [STORAGE_DEFAULT_SEARCH_URL]: inputDefaultSearchEngine.value }, onStorageSet);
+			browser.storage.sync.set({ [STORAGE_DEFAULT_SEARCH_URL]: inputDefaultSearchEngine.value })
+			.then(onStorageSet);
 
 		});
 
 
 		if(result[STORAGE_RULES].length === 0) {
 			
-			textVariableStatus.innerText = chrome.i18n.getMessage("noVariables");
+			textVariableStatus.innerText = browser.i18n.getMessage("noVariables");
 			
 		} else {
 

@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded",function(){
 	
 		if(el.nodeName === "INPUT") {
 	
-			el.placeholder = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
+			el.placeholder = browser.i18n.getMessage(el.getAttribute('data-i18n'));
 			
 		} else {
 	
-			el.innerText = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
+			el.innerText = browser.i18n.getMessage(el.getAttribute('data-i18n'));
 			
 		}
 	
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded",function(){
 	
 	document.querySelectorAll('[data-i18n-html]').forEach(el => {
 	
-		el.innerHTML = chrome.i18n.getMessage(el.getAttribute('data-i18n-html'));
+		el.innerHTML = browser.i18n.getMessage(el.getAttribute('data-i18n-html'));
 	
 	});
 

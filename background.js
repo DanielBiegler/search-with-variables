@@ -1,5 +1,5 @@
 // This event is fired when the user installs/updates the extension
-chrome.runtime.onInstalled.addListener((details) => {
+browser.runtime.onInstalled.addListener(details => {
 
   function onInstall() {
 
@@ -9,7 +9,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         { id: 1, searchValue: ":js",   replaceValue: "javascript"           },
         { id: 2, searchValue: ":ciu",  replaceValue: "caniuse"              },
         { id: 3, searchValue: ":so",   replaceValue: "stackoverflow"        },
-        { id: 4, searchValue: ":cea",  replaceValue: "chrome extension api" },
+        { id: 4, searchValue: ":bea",  replaceValue: "browser extension api" },
         { id: 5, searchValue: ":lx",   replaceValue: "linux"                },
         { id: 6, searchValue: "@db",   replaceValue: "danielbiegler.de"     },
       ],
@@ -17,9 +17,8 @@ chrome.runtime.onInstalled.addListener((details) => {
       [STORAGE_DEFAULT_SEARCH_URL]: "https://www.google.com/search?q=%s"
     };
 
-    chrome.storage.sync.set(DEFAULT_CONFIG);
-
-    generateDefaultSuggestions();
+    browser.storage.sync.set(DEFAULT_CONFIG)
+    .then(generateDefaultSuggestions);
     
   }
 
@@ -30,7 +29,7 @@ chrome.runtime.onInstalled.addListener((details) => {
     
   }
   
-  const currentVersion = chrome.runtime.getManifest().version;
+  const currentVersion = browser.runtime.getManifest().version;
   const previousVersion = details.previousVersion;
   const reason = details.reason;
 
@@ -44,15 +43,10 @@ chrome.runtime.onInstalled.addListener((details) => {
       onUpdate(currentVersion, previousVersion);
       break;
 
-    //  case 'chrome_update':
-    //  case 'shared_module_update':
-    //  default:
-    //     console.log('Other install events within the browser')
-    //     break;
   }
 
-})
+});
 
 
 // This event is fired when the user accepts the input in the omnibox.
-chrome.omnibox.onInputEntered.addListener( handleSearch );
+browser.omnibox.onInputEntered.addListener( handleSearch );
