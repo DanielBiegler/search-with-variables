@@ -45,6 +45,21 @@
 			100%  {opacity: 1; margin-left: 0px}
 		}
 
+		details > summary {
+			cursor: pointer;
+			text-decoration: underline;
+			color: #1EAEDB;
+			list-style: none;
+		}
+
+		details > summary:hover {
+			color: #0FA0CE;
+		}
+
+		details > summary::-webkit-details-marker {
+			display: none;
+		}
+
 	</style>
 
 </head>
@@ -58,7 +73,7 @@
 		<input data-i18n="queryURL" id="input-default-search-engine" type="text" class="u-full-width" placeholder="Search engine query URL">
 
 		<details>
-			<summary data-i18n="showQueryHelpTitle" style="cursor: pointer">Show help and examples</summary>
+			<summary data-i18n="showQueryHelpTitle">Show help and examples</summary>
 			<p data-i18n-html="queryHelpDescription" style="margin-top: 20px;">
 				Sadly Chrome offers no way of accessing the query URLs of configured search engines so you may have to specify your own.<br>
 				You can find your personal settings over at <code>chrome://settings/searchEngines</code>.<br>

@@ -111,7 +111,8 @@ function initSettings() {
 
 	// Retrieve everything
 	// TODO: This might error out?
-	browser.storage.sync.get(result => {
+	browser.storage.sync.get()
+	.then(result => {
 
 		// Search engine query URL
 		inputDefaultSearchEngine.value = result[STORAGE_DEFAULT_SEARCH_URL];
