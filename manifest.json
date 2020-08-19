@@ -12,7 +12,7 @@
     "persistent": false
   },
 
-  "omnibox": { "keyword" : ":" },
+  "omnibox": { "keyword" : "!" },
   
   "browser_action": {
     "default_icon": {
