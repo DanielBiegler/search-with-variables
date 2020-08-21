@@ -8,7 +8,7 @@ Search | Options
 ![example search](https://github.com/DanielBiegler/search-with-variables/blob/master/assets/example_search_en.png?raw=true) | ![example options](https://github.com/DanielBiegler/search-with-variables/blob/master/assets/options_example_screenshot_en.png?raw=true)
 
 # Download
-[![Chrome Icon](https://github.com/DanielBiegler/search-with-variables/blob/master/assets/chrome.png?raw=true)](https://chrome.google.com/webstore/detail/gjkfnnnjapodhjkddifnfbbnlakigfel "Install on Chrome") [![Chromium Icon](https://github.com/DanielBiegler/search-with-variables/blob/master/assets/chromium.png?raw=true)](https://chrome.google.com/webstore/detail/gjkfnnnjapodhjkddifnfbbnlakigfel "Install on Chromium") [![Firefox Icon](https://github.com/DanielBiegler/search-with-variables/blob/master/assets/firefox.png?raw=true)](# "Install on Firefox")
+[![Chrome Icon](https://github.com/DanielBiegler/search-with-variables/blob/master/assets/chrome.png?raw=true)](https://chrome.google.com/webstore/detail/gjkfnnnjapodhjkddifnfbbnlakigfel "Install on Chrome") [![Chromium Icon](https://github.com/DanielBiegler/search-with-variables/blob/master/assets/chromium.png?raw=true)](https://chrome.google.com/webstore/detail/gjkfnnnjapodhjkddifnfbbnlakigfel "Install on Chromium") [![Firefox Icon](https://github.com/DanielBiegler/search-with-variables/blob/master/assets/firefox.png?raw=true)](https://addons.mozilla.org/firefox/addon/search-with-variables/ "Install on Firefox")
 
 # Description
 Quickly search the web with variables inside the query for those pesky repeating lookups.
