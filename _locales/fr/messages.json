@@ -1,0 +1,68 @@
+{
+  "extName": {
+    "message": "Recherche avec des variables"
+  },
+  "extDescription": {
+    "message": "Effectuez rapidement des recherches sur le web avec des variables dans la requête pour trouver ces ennuyeuses recherches répétitives."
+  },
+  "yourValues": {
+    "message": "Vos valeurs"
+  },
+  "noValuesSet": {
+    "message": "Vous n'avez pas de valeurs fixées. Allez à la page des paramètres pour en ajouter de nouveaux."
+  },
+  "notificationTitle": {
+    "message": "Paramètres sauvegardés"
+  },
+  "notificationMessage": {
+    "message": "Vos paramètres ont été sauvegardés avec succès. Cliquez pour rejeter cette notification."
+  },
+  "optionsPageTitle": {
+    "message": "Options | Recherche avec variables"
+  },
+  "popupPageTitle": {
+    "message": "Popup | Recherche avec des variables"
+  },
+  "searchEngine": {
+    "message": "Moteur de recherche"
+  },
+  "queryURL": {
+    "message": "URL de recherche"
+  },
+  "showQueryHelpTitle": {
+    "message": "Afficher/masquer l'aide et les exemples"
+  },
+  "queryHelpDescription": {
+    "message": "Malheureusement, les navigateurs n'offrent aucun moyen d'accéder aux URL des moteurs de recherche configurés, vous devrez donc peut-être spécifier les vôtres.<br> Vous pouvez trouver vos paramètres personnels à l'adresse <code>chrome://settings/searchEngines</code>.<br> (Firefox : <code>about:addons</code>)<br>Cette extension prend l'URL de la requête et remplace les caractères <code><b class=\"highlight-code\">%s</b></code> par votre requête traitée</br>.<br><br> Jetez un coup d'œil à ces exemples de requêtes provenant de grands moteurs de recherche :</br></br></br></br>"
+  },
+  "variables": {
+    "message": "Variables"
+  },
+  "variableName": {
+    "message": "Nom de la variable"
+  },
+  "replaceValue": {
+    "message": "Remplacer la valeur"
+  },
+  "action": {
+    "message": "Action"
+  },
+  "loadingVariables": {
+    "message": "Chargement de vos variables.."
+  },
+  "noVariables": {
+    "message": "Il n'y a actuellement aucune variable définie."
+  },
+  "addVariable": {
+    "message": "Ajouter une variable"
+  },
+  "delete": {
+    "message": "Supprimer"
+  },
+  "pressEnterToSearch": {
+    "message": "Appuyez sur la touche Entrée pour effectuer une recherche"
+  },
+  "seeYourVariables": {
+    "message": "Voir vos variables"
+  }
+}

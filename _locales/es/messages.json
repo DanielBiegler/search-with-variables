@@ -1,0 +1,68 @@
+{
+  "extName": {
+    "message": "Búsqueda con Variables"
+  },
+  "extDescription": {
+    "message": "Busca rápidamente en la web con variables dentro de la consulta para esas molestas búsquedas repetitivas."
+  },
+  "yourValues": {
+    "message": "Sus valores"
+  },
+  "noValuesSet": {
+    "message": "No tienes valores establecidos. Ve a la página de ajustes para añadir nuevos."
+  },
+  "notificationTitle": {
+    "message": "Configuración guardada"
+  },
+  "notificationMessage": {
+    "message": "Su configuración se ha guardado con éxito. Haz clic para descartar esta notificación."
+  },
+  "optionsPageTitle": {
+    "message": "Opciones | Búsqueda con Variables"
+  },
+  "popupPageTitle": {
+    "message": "Popup | Búsqueda con Variables"
+  },
+  "searchEngine": {
+    "message": "Motor de búsqueda"
+  },
+  "queryURL": {
+    "message": "Consulta URL"
+  },
+  "showQueryHelpTitle": {
+    "message": "Mostrar/Ocultar ayuda y ejemplos"
+  },
+  "queryHelpDescription": {
+    "message": "Lamentablemente los navegadores no ofrecen ninguna manera de acceder a las URL de consulta de los motores de búsqueda configurados, por lo que es posible que tengas que especificar las tuyas propias.<br> Puedes encontrar tu configuración personal en <code>chrome://settings/searchEngines</code>.<br> (Firefox: <code>about:addons</code>)<br>Esta extensión toma el URL de la consulta y reemplaza los caracteres <code><b class=\"highlight-code\">%s</b></code> con su consulta procesada.<br> Echa un vistazo a estos ejemplos de consultas de grandes motores de búsqueda:</br></br></br></br>"
+  },
+  "variables": {
+    "message": "Variables"
+  },
+  "variableName": {
+    "message": "Nombre de la variable"
+  },
+  "replaceValue": {
+    "message": "Reemplazar el valor"
+  },
+  "action": {
+    "message": "Acción"
+  },
+  "loadingVariables": {
+    "message": "Cargando sus variables..."
+  },
+  "noVariables": {
+    "message": "Actualmente no hay ninguna variable establecida."
+  },
+  "addVariable": {
+    "message": "Añadir variable"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "pressEnterToSearch": {
+    "message": "Presiona enter para buscar"
+  },
+  "seeYourVariables": {
+    "message": "Vea sus variables"
+  }
+}
