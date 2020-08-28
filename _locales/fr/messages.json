@@ -33,7 +33,7 @@
     "message": "Afficher/masquer l'aide et les exemples"
   },
   "queryHelpDescription": {
-    "message": "Malheureusement, les navigateurs n'offrent aucun moyen d'accéder aux URL des moteurs de recherche configurés, vous devrez donc peut-être spécifier les vôtres.<br> Vous pouvez trouver vos paramètres personnels à l'adresse <code>chrome://settings/searchEngines</code>.<br> (Firefox : <code>about:addons</code>)<br>Cette extension prend l'URL de la requête et remplace les caractères <code><b class=\"highlight-code\">%s</b></code> par votre requête traitée</br>.<br><br> Jetez un coup d'œil à ces exemples de requêtes provenant de grands moteurs de recherche :</br></br></br></br>"
+    "message": "Malheureusement, les navigateurs n'offrent aucun moyen d'accéder aux URL des moteurs de recherche configurés, vous devrez donc peut-être spécifier les vôtres.<br> Vous pouvez trouver vos paramètres personnels à l'adresse <code>chrome://settings/searchEngines</code>.<br> (Firefox : <code>about:addons</code>)<br>Cette extension prend l'URL de la requête et remplace les caractères <code><b class=\"highlight-code\">%s</b></code> par votre requête traitée.<br>Jetez un coup d'œil à ces exemples de requêtes provenant de grands moteurs de recherche:"
   },
   "variables": {
     "message": "Variables"
