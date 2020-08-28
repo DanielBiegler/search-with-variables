@@ -1,0 +1,68 @@
+{
+  "extName": {
+    "message": "変数で検索"
+  },
+  "extDescription": {
+    "message": "クエリ内の変数を使ってウェブを素早く検索して、厄介な繰り返し検索を行います。"
+  },
+  "yourValues": {
+    "message": "あなたの値"
+  },
+  "noValuesSet": {
+    "message": "値が設定されていません。設定ページに移動して、新しい値を追加してください。"
+  },
+  "notificationTitle": {
+    "message": "保存された設定"
+  },
+  "notificationMessage": {
+    "message": "設定は正常に保存されました。この通知を無効にするにはクリックしてください。"
+  },
+  "optionsPageTitle": {
+    "message": "オプション｜変数で検索"
+  },
+  "popupPageTitle": {
+    "message": "ポップアップ｜変数で検索"
+  },
+  "searchEngine": {
+    "message": "検索エンジン"
+  },
+  "queryURL": {
+    "message": "クエリURL"
+  },
+  "showQueryHelpTitle": {
+    "message": "ヘルプと例の表示/非表示"
+  },
+  "queryHelpDescription": {
+    "message": "悲しいことに、ブラウザは設定された検索エンジンのクエリURLにアクセスする方法を提供していないので、自分で指定する必要があるかもしれません。<br>個人的な設定は <code>chrome://settings/searchEngines</code>.<br>(Firefox<code>about:addons</code>: )<br>この拡張機能は、クエリURLを受け取り、その文字<code><b class=\"highlight-code\">%s</b></code>を処理済みのクエリに 置き換えます<br>大手検索エンジンのクエリの例を見てみましょう。"
+  },
+  "variables": {
+    "message": "変数"
+  },
+  "variableName": {
+    "message": "変数名"
+  },
+  "replaceValue": {
+    "message": "値を置き換える"
+  },
+  "action": {
+    "message": "アクション"
+  },
+  "loadingVariables": {
+    "message": "変数の読み込み..."
+  },
+  "noVariables": {
+    "message": "現在、変数は設定されていません。"
+  },
+  "addVariable": {
+    "message": "変数の追加"
+  },
+  "delete": {
+    "message": "削除"
+  },
+  "pressEnterToSearch": {
+    "message": "Enterキーを押して検索します。"
+  },
+  "seeYourVariables": {
+    "message": "変数を見る"
+  }
+}
