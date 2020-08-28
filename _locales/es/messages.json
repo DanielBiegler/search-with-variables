@@ -33,7 +33,7 @@
     "message": "Mostrar/Ocultar ayuda y ejemplos"
   },
   "queryHelpDescription": {
-    "message": "Lamentablemente los navegadores no ofrecen ninguna manera de acceder a las URL de consulta de los motores de búsqueda configurados, por lo que es posible que tengas que especificar las tuyas propias.<br> Puedes encontrar tu configuración personal en <code>chrome://settings/searchEngines</code>.<br> (Firefox: <code>about:addons</code>)<br>Esta extensión toma el URL de la consulta y reemplaza los caracteres <code><b class=\"highlight-code\">%s</b></code> con su consulta procesada.<br> Echa un vistazo a estos ejemplos de consultas de grandes motores de búsqueda:</br></br></br></br>"
+    "message": "Lamentablemente los navegadores no ofrecen ninguna manera de acceder a las URL de consulta de los motores de búsqueda configurados, por lo que es posible que tengas que especificar las tuyas propias.<br> Puedes encontrar tu configuración personal en <code>chrome://settings/searchEngines</code>.<br> (Firefox: <code>about:addons</code>)<br>Esta extensión toma el URL de la consulta y reemplaza los caracteres <code><b class=\"highlight-code\">%s</b></code> con su consulta procesada.<br> Echa un vistazo a estos ejemplos de consultas de grandes motores de búsqueda:"
   },
   "variables": {
     "message": "Variables"
