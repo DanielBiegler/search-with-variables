@@ -33,7 +33,7 @@
     "message": "ヘルプと例の表示/非表示"
   },
   "queryHelpDescription": {
-    "message": "悲しいことに、ブラウザは設定された検索エンジンのクエリURLにアクセスする方法を提供していないので、自分で指定する必要があるかもしれません。<br>個人的な設定は <code>chrome://settings/searchEngines</code>.<br>(Firefox<code>about:addons</code>: )<br>この拡張機能は、クエリURLを受け取り、その文字<code><b class=\"highlight-code\">%s</b></code>を処理済みのクエリに</br>置き換えます。<br><br>大手検索エンジンのクエリの例を見てみましょう。</br></br></br></br>"
+    "message": "悲しいことに、ブラウザは設定された検索エンジンのクエリURLにアクセスする方法を提供していないので、自分で指定する必要があるかもしれません。<br>個人的な設定は <code>chrome://settings/searchEngines</code>.<br>(Firefox<code>about:addons</code>: )<br>この拡張機能は、クエリURLを受け取り、その文字<code><b class=\"highlight-code\">%s</b></code>を処理済みのクエリに 置き換えます<br>大手検索エンジンのクエリの例を見てみましょう。"
   },
   "variables": {
     "message": "変数"
