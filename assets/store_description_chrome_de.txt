@@ -1,0 +1,29 @@
+Effizientes Suchen im Web mit Hilfe von Variablen innerhalb der Suchanfrage. Sag 'Adieu' zu lästigen, sich wiederholenden Suchen!
+Beim Recherchieren, bei der Fehlersuche oder bei der Arbeit im Allgemeinen neigt man dazu, sehr ähnliche Anfragen zu wiederholen, um der Suchmaschine genügend Kontext zu geben. 
+
+Beispielsweise muss ich oft Funktionsdefinitionen für Programmiersprachen nachschlagen, so dass ich den Namen der Sprache gefolgt von der eigentlichen Abfrage neu eingeben muss. Jedes. Mal. Wieder. Das wird ziemlich schnell, ziemlich langweilig.
+
+"Javascript reduce", "Javascript sort", "Javascr... *seufz*"...
+
+Diese Erweiterung erspart dir diese lästigen Tastenanschläge!
+
+Definiere deine eigenen Variablen, um deinen Bedürfnissen gerecht zu werden und deine Abfragen zu beschleunigen. Musst du die IDs von Komponenten oft neu eingeben? Musst du oft mehrere Schlüsselwörter neu eingeben? Musst du bestimmte Kalenderdaten neu eingeben? Erstelle Variablen und genieße die reine Glückseligkeit einer effizienten Suche!
+
+Du kannst bequem zwischen Geräten wechseln, da diese Erweiterung die Variablen mit deinem Google-Konto synchronisiert.
+
+### ## # ANLEITUNG ZUR BENUTZUNG # ## ###
+
+Es gibt drei Möglichkeiten, mit der Erweiterung zu interagieren.
+
+1. Der schnellste Weg ist, STRG+UMSCHALT+L (CMD+... auf Mac) zu drücken, um das Suchfeld auszulösen. Gib danach deine Suchanfrage ein und drück ENTER. Du kannst die Tastenkombination in deinen Browser Einstellungen unter chrome://extensions/shortcuts ändern. (Unter Edge ist das ein Muss)
+
+2. Löse das Suchfeld per Hand aus, indem du auf das Symbol in der Erweiterungsleiste klickst. (obere rechte Ecke).
+
+3. Fokussiere die Omnibox (die Browser-Suchleiste) und gib ! (Ausrufezeichen) ein. Drücke nun LEERTASTE oder TAB, um die Abfrage zu aktivieren.
+
+Öffne die Einstellungen, indem du mit der rechten Maustaste auf die Erweiterung klickst, oder folge dem Link im Suchfeld (siehe Punkt 1. oder 2.). Dort kannst du deine Abfrage-URL und Variablen definieren.
+
+Ich hoffe, dass dir diese Erweiterung ebenso viel Spaß macht wie mir. Der Code ist kostenlos und offen unter https://github.com/DanielBiegler/search-with-variables erreichbar. Natürlich bin ich offen für Rückmeldungen und Vorschläge, kein Grund schüchtern zu sein!
+
+Mit freundlichen Grüßen,
+Daniel Biegler.
