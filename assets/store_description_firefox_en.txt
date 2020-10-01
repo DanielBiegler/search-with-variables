@@ -1,0 +1,30 @@
+When researching, troubleshooting or working in general one tends to repeat very similar queries in order to give the search engine enough context.
+
+For example, I often need to lookup function definitions for programming languages so I have to retype the name of the language followed by the actual query. Every. Time. This really does get tedious after a while.
+
+"Javascript reduce", "Javascript sort", "Javascr... *sigh*"...
+
+This extension saves you those pesky, pesky keystrokes!
+
+Define your own variables to fit your needs and speed up your queries. Need to retype IDs of components often? Need to often retype multiple keywords? Need to retype specific dates? Create variables for them and enjoy the pure bliss of searching efficiently!
+
+You can comfortably switch between devices because this extension synchronizes your variables with your Google/Firefox Account.
+
+### ## # HOW TO USE # ## ###
+
+There are three ways to interact with the extension.
+
+1. The quickest way is to hit CTRL+SHIFT+L (CMD+... on Mac) in order to trigger the search box. After that simply type in your query and hit ENTER. You can change the shortcut in your browsers settings under about:addons
+
+2. Manually trigger the search box through clicking on the icon in your extension bar. (Top right corner).
+
+3. Focus your omnibox and type ! (exclamation mark) and hit SPACE to activate the query.
+
+Either open the settings by right-clicking on the extension or follow the link in the search box (remember point 1. and 2.). There you can define your query URL and variables.
+
+I hope you enjoy this as much as I do. The code for this extension is free and open source! Contribute over at: https://github.com/DanielBiegler/search-with-variables
+
+Of course I'm open to feedback and suggestions, no need to be shy!
+
+Best regards,
+Daniel Biegler.
